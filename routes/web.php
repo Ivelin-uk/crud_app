@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +15,6 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/add_product', [ProductController::class, 'add_product']);
 
-Route::get('/user/{id}', [UserController::class, 'show']);
+Route::get('/list_products', [ProductController::class, 'list_products']);
