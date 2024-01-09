@@ -18,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/add_product', [ProductController::class, 'add_product']);
 
 Route::get('/list_products', [ProductController::class, 'list_products']);
+
+Route::post('/add_product_procces', [ProductController::class, 'add_product_procces'])->name('processForm');
