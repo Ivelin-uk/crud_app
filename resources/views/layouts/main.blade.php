@@ -14,11 +14,12 @@
 
     <nav>
         <ul>
+            <li><a href="/register_user">REGISTER USER</a></li>
             <li><a href="/add_product">ADD PRODUCT</a></li>
             <li><a href="/list_products">LIST PRODUCTS</a></li>
         </ul>
     </nav>
-
+    
     <section>
         @yield('content')
     </section>

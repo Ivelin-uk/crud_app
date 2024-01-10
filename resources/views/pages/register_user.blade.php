@@ -1,9 +1,9 @@
 @extends('layouts.main')
 
-@section('title', 'ADD PRODUCT')
+@section('title', 'REGISTER USER')
 
 @section('content')
-    <h2>ADD PRODUCT</h2>
+    <h2>REGISTER USER</h2>
     <form action="{{ route('processForm') }}" method="post">
         @csrf
         @error('name')
@@ -12,9 +12,11 @@
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
         <br>
-        <label for="email">Quantity:</label>
-        <input type="number" id="quantity" name="quantity" required>
+        <label for="email">Email:</label>
+        <input type="number" id="quantity" name="email" required>
         <br>
-        <button type="submit">Add</button>
+        <label for="name">Password:</label>
+        <input type="text" id="name" name="password" required>
+        <button type="submit">REGISTER</button>
     </form>
 @endsection
