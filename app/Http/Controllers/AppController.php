@@ -18,7 +18,7 @@ class AppController extends Controller
             $username = Auth::user()->name;
         }
         */
-        return view('layouts.main',['username' => $username]);
+        return view('layouts.main');
     }
 
 
