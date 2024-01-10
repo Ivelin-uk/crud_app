@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AppController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -14,12 +14,12 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', [ProductController::class, 'home']);
+Route::get('/', [AppController::class, 'home']);
 
-Route::get('/add_product', [ProductController::class, 'add_product']);
+Route::get('/add_product', [AppController::class, 'add_product']);
 
-Route::get('/list_products', [ProductController::class, 'list_products']);
+Route::get('/list_products', [AppController::class, 'list_products']);
 
-Route::get('/register_user', [ProductController::class, 'register_user']);
+Route::get('/register_user', [AppController::class, 'register_user']);
 
-Route::post('/add_product_procces', [ProductController::class, 'add_product_procces'])->name('processForm');
+Route::post('/add_product_procces', [AppController::class, 'add_product_procces'])->name('processForm');
