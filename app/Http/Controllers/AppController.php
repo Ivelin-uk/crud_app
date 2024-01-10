@@ -11,11 +11,13 @@ class AppController extends Controller
 {
     public function home()
     {
+        /*
         $username = "";
         if (Auth::check())
         {
             $username = Auth::user()->name;
         }
+        */
         return view('layouts.main',['username' => $username]);
     }
 
