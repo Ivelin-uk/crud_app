@@ -17,9 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [AppController::class, 'home']);
 
 Route::get('/add_product', [AppController::class, 'add_product']);
-
+Route::post('/add_product_procces', [AppController::class, 'add_product_procces'])->name('processProduct');
 Route::get('/list_products', [AppController::class, 'list_products']);
 
 Route::get('/register_user', [AppController::class, 'register_user']);
+Route::post('/register_user_procces', [AppController::class, 'register_user_procces'])->name('userRegster');
 
-Route::post('/add_product_procces', [AppController::class, 'add_product_procces'])->name('processForm');
+Route::get('/login_user', [AppController::class, 'login_user']);
+Route::post('/login_user_procces', [AppController::class, 'login_user_procces'])->name('userLogin');

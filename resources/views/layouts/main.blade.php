@@ -8,6 +8,14 @@
     <title>@yield('title', 'Laravel Example')</title>
 </head>
 <body>
+    <div>
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+    </div>
+
     <header>
         <h1>Laravel Example</h1>
     </header>
@@ -15,11 +23,10 @@
     <nav>
         <ul>
             <li><a href="/register_user">REGISTER USER</a></li>
-            <li><a href="/add_product">ADD PRODUCT</a></li>
-            <li><a href="/list_products">LIST PRODUCTS</a></li>
+            <li><a href="/login_user">LOGIN USER</a></li>
         </ul>
     </nav>
-    
+
     <section>
         @yield('content')
     </section>

@@ -4,19 +4,39 @@
 
 @section('content')
     <h2>REGISTER USER</h2>
-    <form action="{{ route('processForm') }}" method="post">
+    <form method="POST" action="{{ route('userRegster') }}">
         @csrf
-        @error('name')
-            <div style="color: red;">{{ $message }}</div>
-        @enderror
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <br>
-        <label for="email">Email:</label>
-        <input type="number" id="quantity" name="email" required>
-        <br>
-        <label for="name">Password:</label>
-        <input type="text" id="name" name="password" required>
-        <button type="submit">REGISTER</button>
+        <div>
+            @error('name')
+                <p style="color: red;">{{ $message }}</p>
+            @enderror
+            <label for="name">Name:</label>
+            <input type="text" name="name" value="{{ old('name') }}" required>
+        </div>
+
+        <div>
+            @error('email')
+                <p style="color: red;">{{ $message }}</p>
+            @enderror
+            <label for="email">Email:</label>
+            <input type="email" name="email" value="{{ old('email') }}" required>
+        </div>
+
+        <div>
+            @error('password')
+                <p style="color: red;">{{ $message }}</p>
+            @enderror
+            <label for="password">Password:</label>
+            <input type="password" name="password" required>
+        </div>
+
+        <div>
+            <label for="password_confirmation">Confirm Password:</label>
+            <input type="password" name="password_confirmation" required>
+        </div>
+
+        <div>
+            <button type="submit">Register</button>
+        </div>
     </form>
 @endsection

@@ -4,7 +4,7 @@
 
 @section('content')
     <h2>ADD PRODUCT</h2>
-    <form action="{{ route('processForm') }}" method="post">
+    <form action="{{ route('processProduct') }}" method="post">
         @csrf
         @error('name')
             <div style="color: red;">{{ $message }}</div>
