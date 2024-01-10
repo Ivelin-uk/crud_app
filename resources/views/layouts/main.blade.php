@@ -17,13 +17,19 @@
     </div>
 
     <header>
-        <h1>Laravel Example</h1>
+        <h1>Hello, {{$username}}</h1>
     </header>
 
     <nav>
         <ul>
             <li><a href="/register_user">REGISTER USER</a></li>
             <li><a href="/login_user">LOGIN USER</a></li>
+            @auth
+                <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">LOGOUT</a></li>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            @endauth
         </ul>
     </nav>
 

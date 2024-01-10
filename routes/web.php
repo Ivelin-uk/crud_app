@@ -25,3 +25,5 @@ Route::post('/register_user_procces', [AppController::class, 'register_user_proc
 
 Route::get('/login_user', [AppController::class, 'login_user']);
 Route::post('/login_user_procces', [AppController::class, 'login_user_procces'])->name('userLogin');
+
+Route::post('/logout', [AppController::class, 'logout'])->name('logout');

@@ -11,7 +11,12 @@ class AppController extends Controller
 {
     public function home()
     {
-        return view('layouts.main');
+        $username = "";
+        if (Auth::check())
+        {
+            $username = Auth::user()->name;
+        }
+        return view('layouts.main',['username' => $username]);
     }
 
 
@@ -88,5 +93,11 @@ class AppController extends Controller
         }
 
         return redirect('/login_user')->withErrors(['error' => 'Invalid credentials']);
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/'); // Можете да пренасочите потребителя към желаната страница след изход
     }
 }
