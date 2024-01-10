@@ -17,7 +17,6 @@
     </div>
 
     <header>
-        <h1>Hello, {{$username}}</h1>
     </header>
 
     <nav>
