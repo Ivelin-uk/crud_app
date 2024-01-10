@@ -12,18 +12,17 @@ class AppController extends Controller
     public function __construct()
     {
         // Добавяне на middleware към целия контролер
-        $this->middleware('ShareDataWithViews');
+        $this->middleware('shareDataWithViews');
     }
 
+    public function unauthorized()
+    {
+        
+        return view('unauthorized');
+    }
+    
     public function home()
     {
-        /*
-        $username = "";
-        if (Auth::check())
-        {
-            $username = Auth::user()->name;
-        }
-        */
         return view('layouts.main');
     }
 

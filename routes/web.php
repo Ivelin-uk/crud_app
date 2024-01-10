@@ -14,9 +14,11 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/unauthorized', [AppController::class, 'unauthorized']);
+
 Route::get('/', [AppController::class, 'home']);
 
-Route::get('/add_product', [AppController::class, 'add_product']);
+Route::get('/add_product', [AppController::class, 'add_product'])->middleware('checkAccess');;
 Route::post('/add_product_procces', [AppController::class, 'add_product_procces'])->name('processProduct');
 Route::get('/list_products', [AppController::class, 'list_products']);
 
