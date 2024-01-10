@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Hash;
 
 class AppController extends Controller
 {
+    public function __construct()
+    {
+        // Добавяне на middleware към целия контролер
+        $this->middleware('ShareDataWithViews');
+    }
+
     public function home()
     {
         /*
